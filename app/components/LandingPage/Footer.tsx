@@ -3,68 +3,125 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer
+      className="bg-gray-50 dark:bg-[#15202b] border-t border-gray-200 dark:border-gray-800 pt-16 pb-8"
       id="contact"
-      className="bg-white dark:bg-[#1a2632] border-t border-[#e7edf3] dark:border-gray-800"
     >
-      <div className="max-w-[960px] mx-auto flex flex-col gap-8 px-5 py-12 text-center">
-        <div className="flex items-center justify-center gap-2 mb-2">
-          <span className="material-symbols-outlined text-3xl text-primary">
-            local_car_wash
-          </span>
-          <span className="text-[#0d141b] dark:text-white text-xl font-extrabold tracking-tight">
-            DMDCW
-          </span>
+      <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-40">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          <div className="flex flex-col gap-4">
+            <div className="  flex items-center gap-2">
+              <span className="text-[#0d141b] dark:text-white text-xl font-extrabold tracking-tight">
+                d'MD
+              </span>
+            </div>
+            <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+              Professional car and motorcycle detailing services in Wash City.
+              We provide premium care to ensure your ride always looks its best.
+            </p>
+          </div>
+          <div className="flex flex-col gap-4">
+            <h4 className="text-[#0d141b] dark:text-white font-bold text-base uppercase tracking-wider">
+              Quick Links
+            </h4>
+            <ul className="flex flex-col gap-3">
+              <li>
+                <a
+                  className="text-gray-500 hover:text-primary transition-colors text-sm font-medium"
+                  href="#"
+                >
+                  Beranda
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-gray-500 hover:text-primary transition-colors text-sm font-medium"
+                  href="#services"
+                >
+                  Layanan
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-gray-500 hover:text-primary transition-colors text-sm font-medium"
+                  href="#booking"
+                >
+                  Booking
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-gray-500 hover:text-primary transition-colors text-sm font-medium"
+                  href="#facilities"
+                >
+                  Fasilitas
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="flex flex-col gap-4">
+            <h4 className="text-[#0d141b] dark:text-white font-bold text-base uppercase tracking-wider">
+              Contact Info
+            </h4>
+            <ul className="flex flex-col gap-3">
+              <li className="flex items-start gap-3">
+                <span className="material-symbols-outlined text-primary text-sm mt-0.5">
+                  location_on
+                </span>
+                <span className="text-gray-500 dark:text-gray-400 text-sm">
+                  123 Clean Street, Wash City, Indonesia
+                </span>
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="material-symbols-outlined text-primary text-sm">
+                  call
+                </span>
+                <span className="text-gray-500 dark:text-gray-400 text-sm">
+                  +62 123 4567 890
+                </span>
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="material-symbols-outlined text-primary text-sm">
+                  mail
+                </span>
+                <span className="text-gray-500 dark:text-gray-400 text-sm">
+                  hello@dmodern.com
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div className="flex flex-col gap-4">
+            <h4 className="text-[#0d141b] dark:text-white font-bold text-base uppercase tracking-wider">
+              Follow Us
+            </h4>
+            <div className="flex gap-4">
+              <a
+                className="w-10 h-10 flex items-center justify-center rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-500 hover:text-primary hover:border-primary transition-all"
+                href="#"
+              >
+                <span className="material-symbols-outlined text-xl">
+                  public
+                </span>
+              </a>
+              <a
+                className="w-10 h-10 flex items-center justify-center rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-500 hover:text-primary hover:border-primary transition-all"
+                href="#"
+              >
+                <span className="material-symbols-outlined text-xl">share</span>
+              </a>
+              <a
+                className="w-10 h-10 flex items-center justify-center rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-500 hover:text-primary hover:border-primary transition-all"
+                href="#"
+              >
+                <span className="material-symbols-outlined text-xl">
+                  alternate_email
+                </span>
+              </a>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
-          <Link
-            className="text-gray-500 hover:text-primary transition-colors text-base font-medium min-w-20"
-            href="#"
-          >
-            Home
-          </Link>
-          <Link
-            className="text-gray-500 hover:text-primary transition-colors text-base font-medium min-w-20"
-            href="#services"
-          >
-            Services
-          </Link>
-          <Link
-            className="text-gray-500 hover:text-primary transition-colors text-base font-medium min-w-20"
-            href="#booking"
-          >
-            Booking
-          </Link>
-          <Link
-            className="text-gray-500 hover:text-primary transition-colors text-base font-medium min-w-20"
-            href="#facilities"
-          >
-            Facilities
-          </Link>
-        </div>
-        <div className="flex justify-center gap-6">
-          <Link
-            className="text-gray-400 hover:text-primary hover:scale-110 transition-all transform p-2 bg-gray-50 dark:bg-gray-800 rounded-full"
-            href="#"
-          >
-            <span className="material-symbols-outlined">public</span>
-          </Link>
-          <Link
-            className="text-gray-400 hover:text-primary hover:scale-110 transition-all transform p-2 bg-gray-50 dark:bg-gray-800 rounded-full"
-            href="#"
-          >
-            <span className="material-symbols-outlined">share</span>
-          </Link>
-          <Link
-            className="text-gray-400 hover:text-primary hover:scale-110 transition-all transform p-2 bg-gray-50 dark:bg-gray-800 rounded-full"
-            href="#"
-          >
-            <span className="material-symbols-outlined">call</span>
-          </Link>
-        </div>
-        <div className="text-gray-400 dark:text-gray-500 text-sm font-normal">
-          <p className="mb-2">123 Clean Street, Wash City, Indonesia</p>
-          <p>
-            © 2023 d&apos;modern car wash &amp; detailing. All rights reserved.
+        <div className="pt-8 border-t border-gray-200 dark:border-gray-800 text-center">
+          <p className="text-gray-400 dark:text-gray-500 text-xs font-medium">
+            © 2026 d'MD car wash. All rights reserved.
           </p>
         </div>
       </div>

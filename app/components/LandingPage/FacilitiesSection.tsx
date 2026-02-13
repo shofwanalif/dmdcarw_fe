@@ -7,19 +7,20 @@ export default function FacilitiesSection() {
       <div className="max-w-[960px] mx-auto">
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="flex-1 order-2 md:order-1">
-            <div className="inline-flex items-center gap-2 text-primary font-bold uppercase tracking-wider text-xs mb-3">
+            {/* <div className="inline-flex items-center gap-2 text-primary font-bold uppercase tracking-wider text-xs mb-3">
               <span className="material-symbols-outlined text-lg">
                 restaurant
               </span>
-              <span>Comfort While You Wait</span>
-            </div>
+              <span>Mengutamakan kenyamanan anda saat menunggu</span>
+            </div> */}
             <h2 className="text-[#0d141b] dark:text-white text-3xl font-black tracking-tight leading-tight mb-4">
-              Fasilitas Kami: Food &amp; Snacks Area
+              Food &amp; Waiting Area
             </h2>
             <p className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed mb-8">
-              Waiting for your vehicle doesn&apos;t have to be boring. At DMD,
-              customers can enjoy various snacks, meals, and beverages in our
-              comfortable lounge while we make your ride shine.
+              Kami memastikan anda agar tidak bosan ketika menunggu. pelanggan
+              dapat menikmati berbagai camilan, makanan, dan minuman sembari
+              menunggu kami membuat kendaraan Anda tampak berkilau. Beberapa
+              fasilitas yang kami sediakan di area tunggu meliputi:
             </p>
             <div className="grid grid-cols-2 gap-4">
               <div className="flex items-center gap-3 p-4 rounded-xl bg-white dark:bg-[#1a2632] border border-gray-100 dark:border-gray-700 shadow-sm">

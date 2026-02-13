@@ -14,10 +14,10 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { href: "#", label: "Home", bold: true },
-    { href: "#services", label: "Services", bold: false },
-    { href: "#booking", label: "How to Book", bold: false },
-    { href: "#facilities", label: "Facilities", bold: false },
+    { href: "#", label: "Beranda", bold: false },
+    { href: "#services", label: "Layanan", bold: false },
+    { href: "#booking", label: "Cara Pemesanan", bold: false },
+    { href: "#facilities", label: "Fasilitas", bold: false },
   ];
 
   return (
@@ -72,9 +72,11 @@ export default function Navbar() {
 
           {/* Divider & Booking - desktop only */}
           <div className="hidden md:block h-6 w-px bg-gray-300 dark:bg-gray-700 mx-1"></div>
-          <button className="hidden md:flex items-center justify-center rounded-full h-10 px-6 bg-primary hover:bg-blue-600 transition-all text-white text-sm font-bold shadow-md hover:shadow-primary/30 whitespace-nowrap cursor-pointer">
-            Booking
-          </button>
+          <Link href="#services">
+            <button className="hidden md:flex items-center justify-center rounded-full h-10 px-6 bg-primary hover:bg-blue-600 transition-all text-white text-sm font-bold shadow-md hover:shadow-primary/30 whitespace-nowrap cursor-pointer">
+              Booking
+            </button>
+          </Link>
 
           {/* Hamburger button - mobile only */}
           <button

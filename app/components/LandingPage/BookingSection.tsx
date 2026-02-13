@@ -13,7 +13,7 @@ export default function BookingSection() {
             Cara Pemesanan
           </h2>
           <p className="text-gray-500 dark:text-gray-400 text-lg">
-            Follow these simple steps to book your service
+            Ikuti langkah berikut untuk memesan layanan kami kami secara online.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
@@ -27,7 +27,8 @@ export default function BookingSection() {
                 Pilih Layanan
               </h3>
               <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                Choose your service package for car or motorcycle from our menu.
+                Pilih layanan yang Anda butuhkan dari daftar layanan kami yang
+                tersedia di menu layanan.
               </p>
             </div>
           </div>
@@ -41,8 +42,8 @@ export default function BookingSection() {
                 Isi Data &amp; Pilih Waktu
               </h3>
               <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                Enter your vehicle details and pick a convenient time slot for
-                your visit.
+                Masukan data pemesan dan detail kendaraan Anda, lalu pilih waktu
+                yang diinginkan.
               </p>
             </div>
           </div>
@@ -55,8 +56,8 @@ export default function BookingSection() {
                 Konfirmasi &amp; Selesai
               </h3>
               <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                Confirm your booking and you&apos;re done! We&apos;ll be waiting
-                for you.
+                Konfirmasi pemesanan anda dan selesai! Kami akan menunggu Anda
+                datang ke tempat.
               </p>
             </div>
           </div>
@@ -69,8 +70,8 @@ export default function BookingSection() {
                 Datang Tepat Waktu
               </h3>
               <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                Arrive on time according to your booking slot to ensure the best
-                service.
+                Datang tepat waktu sesuai jadwal yang sudah Anda pesan untuk
+                mendapatkan layanan terbaik dari kami.
               </p>
             </div>
           </div>

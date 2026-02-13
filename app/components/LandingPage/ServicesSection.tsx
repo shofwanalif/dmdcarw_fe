@@ -7,10 +7,10 @@ export default function ServicesSection() {
       <div className="max-w-[960px] mx-auto flex flex-col gap-10">
         <div className="text-center flex flex-col gap-3">
           <h2 className="text-[#0d141b] dark:text-white text-3xl font-black tracking-tight">
-            Our Services
+            Layanan Kami
           </h2>
           <p className="text-gray-500 dark:text-gray-400 text-lg">
-            Choose the perfect care package for your vehicle
+            Pilih layanan cuci kendaraan yang sesuai dengan kebutuhan Anda
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

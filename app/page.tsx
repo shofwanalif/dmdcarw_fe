@@ -4,6 +4,7 @@ import ServicesSection from "@/app/components/LandingPage/ServicesSection";
 import BookingSection from "@/app/components/LandingPage/BookingSection";
 import FacilitiesSection from "@/app/components/LandingPage/FacilitiesSection";
 import LocationSection from "@/app/components/LandingPage/LocationSection";
+import FAQSection from "@/app/components/LandingPage/FAQSection";
 import Footer from "@/app/components/LandingPage/Footer";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
         <FacilitiesSection />
         <LocationSection />
       </main>
+      <FAQSection />
       <Footer />
     </div>
   );

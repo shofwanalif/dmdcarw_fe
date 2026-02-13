@@ -16,11 +16,13 @@ export default function LocationSection() {
               <span>Visit Us</span>
             </div>
             <h2 className="text-[#0d141b] dark:text-white text-3xl font-black tracking-tight leading-tight">
-              Find Our Location
+              Temukan Lokasi Kami
             </h2>
             <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
-              We are conveniently located in the heart of the city. Drop by for
-              a quick wash or schedule a full detail service.
+              Kami hadir di lokasi yang strategis dekat dengan pusat kota, kami
+              menghadirkan layanan cuci kendaraan yang efisien dan berkualitas.
+              Kunjungi kami untuk layanan cepat atau jadwalkan sesuai preferensi
+              Anda.
             </p>
             <div className="mt-4 flex flex-col gap-4">
               <div className="flex items-start gap-4 p-4 rounded-xl bg-gray-50 dark:bg-[#15202b] border border-gray-100 dark:border-gray-700">
@@ -32,7 +34,7 @@ export default function LocationSection() {
                     DMDCW
                   </h4>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
-                    123 Clean Street, Wash City, Indonesia
+                    Jl. Tjilik Riwut, Indonesia
                   </p>
                 </div>
               </div>
@@ -55,7 +57,7 @@ export default function LocationSection() {
               href="https://maps.google.com"
               target="_blank"
             >
-              <span>Get Directions</span>
+              <span>Buka di Maps</span>
               <span className="material-symbols-outlined text-sm">
                 arrow_forward
               </span>
