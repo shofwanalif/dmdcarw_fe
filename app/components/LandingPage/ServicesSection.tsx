@@ -1,10 +1,23 @@
+"use client";
+
+// import Link from "next/link";
+import { useRouter } from "next/navigation";
+
 export default function ServicesSection() {
+  const features = [
+    { name: "Cuci bersih exterior & kolong" },
+    { name: "Vacum interior" },
+    { name: "Pembersihan kaca" },
+    { name: "Semir ban dan velg" },
+  ];
+  const router = useRouter();
+
   return (
     <section
       id="services"
       className="py-20 px-4 md:px-10 lg:px-40 bg-background-light dark:bg-background-dark"
     >
-      <div className="max-w-[960px] mx-auto flex flex-col gap-10">
+      <div className="max-w-960px mx-auto flex flex-col gap-10">
         <div className="text-center flex flex-col gap-3">
           <h2 className="text-[#0d141b] dark:text-white text-3xl font-black tracking-tight">
             Layanan Kami
@@ -35,40 +48,26 @@ export default function ServicesSection() {
                   Starts at
                 </span>
                 <span className="text-[#0d141b] dark:text-white text-3xl font-black tracking-tight">
-                  Rp 50k
+                  Rp 55k
                 </span>
               </div>
             </div>
             <div className="h-px bg-gray-100 dark:bg-gray-700 w-full"></div>
             <div className="flex flex-col gap-4 flex-1">
-              <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                <span className="material-symbols-outlined text-primary text-xl">
-                  check_circle
-                </span>
-                <span className="text-sm font-medium">Cuci Exterior</span>
-              </div>
-              <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                <span className="material-symbols-outlined text-primary text-xl">
-                  check_circle
-                </span>
-                <span className="text-sm font-medium">Vacum Interior</span>
-              </div>
-              <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                <span className="material-symbols-outlined text-primary text-xl">
-                  check_circle
-                </span>
-                <span className="text-sm font-medium">Pembersihan Kaca</span>
-              </div>
-              <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                <span className="material-symbols-outlined text-primary text-xl">
-                  check_circle
-                </span>
-                <span className="text-sm font-medium">
-                  Pembersihan Ban dan Velg
-                </span>
-              </div>
+              {features.map((feature) => (
+                <div key={feature.name} className="flex items-center gap-2">
+                  <span className="material-symbols-outlined text-primary text-xl">
+                    check_circle
+                  </span>
+                  <span className="text-sm font-medium">{feature.name}</span>
+                </div>
+              ))}
             </div>
-            <button className="w-full mt-4 flex items-center justify-center rounded-lg h-12 px-4 bg-[#e7edf3] hover:bg-primary hover:text-white dark:bg-gray-700 dark:hover:bg-primary dark:text-white text-[#0d141b] text-sm font-bold transition-all duration-200 group-hover:bg-primary group-hover:text-white cursor-pointer">
+
+            <button
+              onClick={() => router.push("/booking?service=cucimobil")}
+              className="w-full mt-4 flex items-center justify-center rounded-lg h-12 px-4 bg-[#e7edf3] hover:bg-primary hover:text-white dark:bg-gray-700 dark:hover:bg-primary dark:text-white text-[#0d141b] text-sm font-bold transition-all duration-200 group-hover:bg-primary group-hover:text-white cursor-pointer"
+            >
               Booking
             </button>
           </div>
@@ -123,7 +122,11 @@ export default function ServicesSection() {
                 </span>
               </div>
             </div>
-            <button className="w-full mt-4 flex items-center justify-center rounded-lg h-12 px-4 bg-[#e7edf3] hover:bg-primary hover:text-white dark:bg-gray-700 dark:hover:bg-primary dark:text-white text-[#0d141b] text-sm font-bold transition-all duration-200 group-hover:bg-primary group-hover:text-white cursor-pointer">
+
+            <button
+              className="w-full mt-4 flex items-center justify-center rounded-lg h-12 px-4 bg-[#e7edf3] hover:bg-primary hover:text-white dark:bg-gray-700 dark:hover:bg-primary dark:text-white text-[#0d141b] text-sm font-bold transition-all duration-200 group-hover:bg-primary group-hover:text-white cursor-pointer"
+              onClick={() => router.push("/booking?service=cucimobil")}
+            >
               Booking
             </button>
           </div>

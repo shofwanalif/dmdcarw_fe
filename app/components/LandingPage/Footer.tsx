@@ -25,36 +25,36 @@ export default function Footer() {
             </h4>
             <ul className="flex flex-col gap-3">
               <li>
-                <a
-                  className="text-gray-500 hover:text-primary transition-colors text-sm font-medium"
+                <Link
                   href="#"
+                  className="text-gray-500 hover:text-primary transition-colors text-sm font-medium"
                 >
                   Beranda
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  className="text-gray-500 hover:text-primary transition-colors text-sm font-medium"
+                <Link
                   href="#services"
+                  className="text-gray-500 hover:text-primary transition-colors text-sm font-medium"
                 >
                   Layanan
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  className="text-gray-500 hover:text-primary transition-colors text-sm font-medium"
+                <Link
                   href="#booking"
+                  className="text-gray-500 hover:text-primary transition-colors text-sm font-medium"
                 >
                   Booking
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  className="text-gray-500 hover:text-primary transition-colors text-sm font-medium"
+                <Link
                   href="#facilities"
+                  className="text-gray-500 hover:text-primary transition-colors text-sm font-medium"
                 >
                   Fasilitas
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -68,7 +68,7 @@ export default function Footer() {
                   location_on
                 </span>
                 <span className="text-gray-500 dark:text-gray-400 text-sm">
-                  123 Clean Street, Wash City, Indonesia
+                  Jl. Tjilik Riwut, Indonesia
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -84,7 +84,7 @@ export default function Footer() {
                   mail
                 </span>
                 <span className="text-gray-500 dark:text-gray-400 text-sm">
-                  hello@dmodern.com
+                  contactmja101@gmail.com
                 </span>
               </li>
             </ul>
@@ -94,28 +94,30 @@ export default function Footer() {
               Follow Us
             </h4>
             <div className="flex gap-4">
-              <a
-                className="w-10 h-10 flex items-center justify-center rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-500 hover:text-primary hover:border-primary transition-all"
+              <Link
                 href="#"
+                className="w-10 h-10 flex items-center justify-center rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-500 hover:text-primary hover:border-primary transition-all"
               >
                 <span className="material-symbols-outlined text-xl">
                   public
                 </span>
-              </a>
-              <a
-                className="w-10 h-10 flex items-center justify-center rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-500 hover:text-primary hover:border-primary transition-all"
+              </Link>
+
+              <Link
                 href="#"
+                className="w-10 h-10 flex items-center justify-center rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-500 hover:text-primary hover:border-primary transition-all"
               >
                 <span className="material-symbols-outlined text-xl">share</span>
-              </a>
-              <a
-                className="w-10 h-10 flex items-center justify-center rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-500 hover:text-primary hover:border-primary transition-all"
+              </Link>
+
+              <Link
                 href="#"
+                className="w-10 h-10 flex items-center justify-center rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-500 hover:text-primary hover:border-primary transition-all"
               >
                 <span className="material-symbols-outlined text-xl">
                   alternate_email
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

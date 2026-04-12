@@ -107,9 +107,12 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="h-px bg-gray-200 dark:bg-gray-700 my-2"></div>
-          <button className="flex items-center justify-center rounded-xl h-12 px-6 bg-primary hover:bg-blue-600 transition-all text-white text-sm font-bold shadow-md hover:shadow-primary/30 cursor-pointer">
-            Booking
-          </button>
+          <Link href="#services">
+            <button className="flex items-center justify-center rounded-xl h-12 px-6 bg-primary hover:bg-blue-600 transition-all text-white text-sm font-bold shadow-md hover:shadow-primary/30 cursor-pointer">
+              Booking
+            </button>
+            x``
+          </Link>
         </div>
       )}
     </nav>
