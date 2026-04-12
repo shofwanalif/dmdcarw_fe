@@ -2,6 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import BookingForm from "./components/bookingform";
+import { Suspense } from "react";
 
 export default function BookingPage() {
   const searchParams = useSearchParams();
@@ -9,7 +10,9 @@ export default function BookingPage() {
 
   return (
     <div className="min-h-screen bg-[#f6f7f8] flex items-center justify-center px-4 py-10">
-      <BookingForm service={service} />
+      <Suspense>
+        <BookingForm service={service} />
+      </Suspense>
     </div>
   );
 }
