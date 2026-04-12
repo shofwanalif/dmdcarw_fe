@@ -11,7 +11,7 @@ export default function HeroSection() {
               'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDa0SDR2wWE2R7PZjI_AYHXxlcqnztut5uX68trItO_yLpmyY6IF3Fyf2V0amnnsDpOfvvZiI9EnGqUzNKsbjmTfFQ3bHkwjmmB4LR8SDEpNtcSFd_4u9knmsyajH5ysNWhipYQSZ2hWCrkeQC59Jlna64npCPupcFlYqtTtrrISg748Vi30u-MNt4qMVGK3N9akVKESnfuBGlJyVTkgertxSZpvSxPo_pOg1QaacSwlxdZCa2nzqgOpALzStE0D2M5r_r2CrzYF-s")',
           }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"></div>
+        <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/60 to-transparent"></div>
         <div className="relative z-10 flex h-full flex-col justify-center px-6 md:px-20 lg:px-40 max-w-7xl mx-auto">
           <div className="max-w-3xl flex flex-col gap-6">
             <span className="inline-block px-3 py-1 bg-primary/20 text-blue-200 backdrop-blur-sm border border-primary/30 rounded-full text-xs font-bold w-fit uppercase tracking-wider">
@@ -21,8 +21,8 @@ export default function HeroSection() {
               Bersih Maksimal, <br /> Waktu Tetap Optimal
             </h1>
             <p className="text-gray-200 text-lg font-medium leading-relaxed max-w-lg">
-              Nikmati layanan cuci mobil di "Modern Car Wash" dengan sistem
-              booking online. Cepat, praktis, dan bebas antri.
+              Nikmati layanan cuci mobil di &quot;Modern Car Wash&quot; dengan
+              sistem booking online. Cepat, praktis, dan bebas antri.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link href="#services" className="w-full sm:w-auto">
@@ -31,9 +31,14 @@ export default function HeroSection() {
                 </button>
               </Link>
 
-              <button className="flex items-center justify-center rounded-lg h-12 px-8 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white text-base font-bold transition-all cursor-pointer w-full sm:w-auto">
-                Hubungi Kami
-              </button>
+              <Link
+                href="https://wa.me/6281348580189?text=Halo%20saya%20ingin%20booking%20layanan%20cuci%20kendaraan%20di%20Modern%20Car%20Wash"
+                target="_blank"
+              >
+                <button className="flex items-center justify-center rounded-lg h-12 px-8 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white text-base font-bold transition-all cursor-pointer w-full sm:w-auto">
+                  Hubungi Kami
+                </button>
+              </Link>
             </div>
           </div>
         </div>

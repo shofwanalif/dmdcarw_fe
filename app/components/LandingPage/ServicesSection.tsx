@@ -1,6 +1,5 @@
 "use client";
 
-// import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function ServicesSection() {
@@ -125,7 +124,7 @@ export default function ServicesSection() {
 
             <button
               className="w-full mt-4 flex items-center justify-center rounded-lg h-12 px-4 bg-[#e7edf3] hover:bg-primary hover:text-white dark:bg-gray-700 dark:hover:bg-primary dark:text-white text-[#0d141b] text-sm font-bold transition-all duration-200 group-hover:bg-primary group-hover:text-white cursor-pointer"
-              onClick={() => router.push("/booking?service=cucimobil")}
+              onClick={() => router.push("/booking?service=cucimotor")}
             >
               Booking
             </button>

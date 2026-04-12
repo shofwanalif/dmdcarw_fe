@@ -1,10 +1,12 @@
 "use client";
 
 import { useForm } from "react-hook-form";
+import { useState, useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { bookingSchema } from "../lib/schemas/booking.schema";
 import { BookingSchema } from "../lib/schemas/booking.schema";
 import { generateWhatsAppLink } from "../lib/utils/whatsapp";
+import TermAndCondition from "./TermAndCondition";
 
 const WhatsAppIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
@@ -38,121 +40,145 @@ export default function BookingForm({ service }: { service: string }) {
     resolver: zodResolver(bookingSchema),
   });
 
+  const [isTermsOpen, setIsTermsOpen] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsTermsOpen(true);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, []);
+
   const onSubmit = (data: BookingSchema) => {
     const url = generateWhatsAppLink(data, service);
     window.open(url, "_blank");
   };
 
   return (
-    <div className="bg-white rounded-2xl p-8 w-full max-w-md shadow-lg border border-slate-100 relative overflow-hidden">
-      {/* Header */}
-      <div className="flex items-center gap-3 mb-7">
-        <div>
-          <h2 className="text-lg font-bold text-[#101922]">Modern Car Wash</h2>
-          <p className="text-xs text-slate-400 font-medium">Booking Online</p>
+    <>
+      <div className="bg-white rounded-2xl p-8 w-full max-w-md shadow-lg border border-slate-100 relative overflow-hidden">
+        {/* Header */}
+        <div className="flex items-center gap-3 mb-7">
+          <div>
+            <h2 className="text-lg font-bold text-[#101922]">
+              Modern Car Wash
+            </h2>
+            <p className="text-xs text-slate-400 font-medium">Booking Online</p>
+          </div>
         </div>
+
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+          {/* Nama */}
+          <div className="flex flex-col gap-1.5">
+            <label className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">
+              Nama Lengkap
+            </label>
+            <input
+              placeholder="Cth: Azis"
+              {...register("nama")}
+              className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-[#f6f7f8] text-[#101922] text-sm font-medium placeholder:text-slate-300 focus:outline-none focus:border-[#137fec] focus:ring-2 focus:ring-[#137fec]/20 focus:bg-white transition-all"
+            />
+            {errors.nama && (
+              <p className="text-red-500 text-sm">{errors.nama.message}</p>
+            )}
+          </div>
+
+          {/* No WA */}
+          <div className="flex flex-col gap-1.5">
+            <label className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">
+              Nomor WhatsApp
+            </label>
+            <input
+              placeholder="08xxxxxxxxxx"
+              type="tel"
+              {...register("whatsapp")}
+              className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-[#f6f7f8] text-[#101922] text-sm font-medium placeholder:text-slate-300 focus:outline-none focus:border-[#137fec] focus:ring-2 focus:ring-[#137fec]/20 focus:bg-white transition-all"
+            />
+            {errors.whatsapp && (
+              <p className="text-red-500 text-sm">{errors.whatsapp.message}</p>
+            )}
+          </div>
+
+          {/* Nopol */}
+          <div className="flex flex-col gap-1.5">
+            <label className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">
+              Nomor Plat
+            </label>
+            <input
+              placeholder="Cth: KH 1234 AB"
+              {...register("nopol")}
+              className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-[#f6f7f8] text-[#101922] text-sm font-medium uppercase placeholder:text-slate-300 placeholder:normal-case focus:outline-none focus:border-[#137fec] focus:ring-2 focus:ring-[#137fec]/20 focus:bg-white transition-all"
+            />
+            {errors.nopol && (
+              <p className="text-red-500 text-sm">{errors.nopol.message}</p>
+            )}
+          </div>
+
+          <div className="border-t border-slate-100" />
+
+          {/* Tanggal & Jam */}
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div className="flex flex-col gap-1.5">
+              <label className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">
+                Tanggal
+              </label>
+              <input
+                type="date"
+                {...register("tanggal")}
+                className="w-full px-3 py-2.5 rounded-xl border border-slate-200 bg-[#f6f7f8] text-[#101922] text-sm font-medium focus:outline-none focus:border-[#137fec] focus:ring-2 focus:ring-[#137fec]/20 focus:bg-white transition-all"
+              />
+              {errors.tanggal && (
+                <p className="text-red-500 text-sm">{errors.tanggal.message}</p>
+              )}
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <label className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">
+                Jam (order terakhir 15.30)
+              </label>
+              <input
+                type="time"
+                {...register("jam")}
+                className="w-full px-3 py-2.5 rounded-xl border border-slate-200 bg-[#f6f7f8] text-[#101922] text-sm font-medium focus:outline-none focus:border-[#137fec] focus:ring-2 focus:ring-[#137fec]/20 focus:bg-white transition-all"
+              />
+              {errors.jam && (
+                <p className="text-red-500 text-sm">{errors.jam.message}</p>
+              )}
+            </div>
+          </div>
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="w-full mt-1 py-3.5 rounded-xl bg-linear-to-r from-[#137fec] to-[#1a99ff] text-white font-bold text-sm flex items-center justify-center gap-2.5 shadow-[0_4px_18px_rgba(19,127,236,0.35)] hover:shadow-[0_6px_24px_rgba(19,127,236,0.45)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-150"
+          >
+            <span className="w-6 h-6 bg-white/20 rounded-md flex items-center justify-center">
+              <WhatsAppIcon />
+            </span>
+            Kirim Booking via WhatsApp
+          </button>
+
+          {/* Info box */}
+          <div className="flex items-start gap-2.5 bg-[#137fec]/7 border border-[#137fec]/20 rounded-xl px-3.5 py-3">
+            <InfoIcon />
+            <p className="text-xs text-blue-700 font-medium leading-relaxed">
+              Booking akan dikirim ke WhatsApp Admin Car Wash untuk konfirmasi
+              ketersediaan jam. Harap membaca {""}{" "}
+              <button
+                type="button"
+                onClick={() => setIsTermsOpen(true)}
+                className="font-semibold underline decoration-blue-700 underline-offset-2 transition-colors hover:text-[#0f6bcc]"
+              >
+                syarat dan ketentuan
+              </button>
+            </p>
+          </div>
+        </form>
       </div>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
-        {/* Nama */}
-        <div className="flex flex-col gap-1.5">
-          <label className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">
-            Nama Lengkap
-          </label>
-          <input
-            placeholder="Cth: Azis"
-            {...register("nama")}
-            className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-[#f6f7f8] text-[#101922] text-sm font-medium placeholder:text-slate-300 focus:outline-none focus:border-[#137fec] focus:ring-2 focus:ring-[#137fec]/20 focus:bg-white transition-all"
-          />
-          {errors.nama && (
-            <p className="text-red-500 text-sm">{errors.nama.message}</p>
-          )}
-        </div>
-
-        {/* No WA */}
-        <div className="flex flex-col gap-1.5">
-          <label className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">
-            Nomor WhatsApp
-          </label>
-          <input
-            placeholder="08xxxxxxxxxx"
-            type="tel"
-            {...register("whatsapp")}
-            className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-[#f6f7f8] text-[#101922] text-sm font-medium placeholder:text-slate-300 focus:outline-none focus:border-[#137fec] focus:ring-2 focus:ring-[#137fec]/20 focus:bg-white transition-all"
-          />
-          {errors.whatsapp && (
-            <p className="text-red-500 text-sm">{errors.whatsapp.message}</p>
-          )}
-        </div>
-
-        {/* Nopol */}
-        <div className="flex flex-col gap-1.5">
-          <label className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">
-            Nomor Polisi
-          </label>
-          <input
-            placeholder="Cth: KH 1234 AB"
-            {...register("nopol")}
-            className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-[#f6f7f8] text-[#101922] text-sm font-medium uppercase placeholder:text-slate-300 placeholder:normal-case focus:outline-none focus:border-[#137fec] focus:ring-2 focus:ring-[#137fec]/20 focus:bg-white transition-all"
-          />
-          {errors.nopol && (
-            <p className="text-red-500 text-sm">{errors.nopol.message}</p>
-          )}
-        </div>
-
-        <div className="border-t border-slate-100" />
-
-        {/* Tanggal & Jam */}
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-          <div className="flex flex-col gap-1.5">
-            <label className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">
-              Tanggal
-            </label>
-            <input
-              type="date"
-              {...register("tanggal")}
-              className="w-full px-3 py-2.5 rounded-xl border border-slate-200 bg-[#f6f7f8] text-[#101922] text-sm font-medium focus:outline-none focus:border-[#137fec] focus:ring-2 focus:ring-[#137fec]/20 focus:bg-white transition-all"
-            />
-            {errors.tanggal && (
-              <p className="text-red-500 text-sm">{errors.tanggal.message}</p>
-            )}
-          </div>
-          <div className="flex flex-col gap-1.5">
-            <label className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">
-              Jam (order terakhir 15.30)
-            </label>
-            <input
-              type="time"
-              {...register("jam")}
-              className="w-full px-3 py-2.5 rounded-xl border border-slate-200 bg-[#f6f7f8] text-[#101922] text-sm font-medium focus:outline-none focus:border-[#137fec] focus:ring-2 focus:ring-[#137fec]/20 focus:bg-white transition-all"
-            />
-            {errors.jam && (
-              <p className="text-red-500 text-sm">{errors.jam.message}</p>
-            )}
-          </div>
-        </div>
-
-        {/* Submit Button */}
-        <button
-          type="submit"
-          className="w-full mt-1 py-3.5 rounded-xl bg-linear-to-r from-[#137fec] to-[#1a99ff] text-white font-bold text-sm flex items-center justify-center gap-2.5 shadow-[0_4px_18px_rgba(19,127,236,0.35)] hover:shadow-[0_6px_24px_rgba(19,127,236,0.45)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-150"
-        >
-          <span className="w-6 h-6 bg-white/20 rounded-md flex items-center justify-center">
-            <WhatsAppIcon />
-          </span>
-          Kirim Booking via WhatsApp
-        </button>
-
-        {/* Info box */}
-        <div className="flex items-start gap-2.5 bg-[#137fec]/7 border border-[#137fec]/20 rounded-xl px-3.5 py-3">
-          <InfoIcon />
-          <p className="text-xs text-blue-700 font-medium leading-relaxed">
-            Booking akan dikirim ke WhatsApp{" "}
-            <strong className="font-bold text-[#137fec]">Admin Car Wash</strong>{" "}
-            untuk konfirmasi ketersediaan jam.
-          </p>
-        </div>
-      </form>
-    </div>
+      <TermAndCondition
+        open={isTermsOpen}
+        onCloseAction={() => setIsTermsOpen(false)}
+      />
+    </>
   );
 }

@@ -8,7 +8,7 @@ BOOKING CAR WASH
 - WhatsApp: ${data.whatsapp}
 - Layanan: ${service}
 - Tanggal: ${data.tanggal}
-- Nomor Polisi: ${data.nopol}
+- Nomor Polisi: ${data.nopol.toUpperCase()}
 - Jam: ${data.jam}
 
 Mohon konfirmasi booking ini. Terima kasih!
