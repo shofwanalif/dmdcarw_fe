@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope, Noto_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "../context/ThemeContext";
+import { QueryProvider } from "./providers/query-provider";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -35,7 +36,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`${manrope.variable} ${notoSans.variable} antialiased`}>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <QueryProvider>{children}</QueryProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

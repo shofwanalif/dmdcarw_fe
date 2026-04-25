@@ -7,6 +7,7 @@ import { bookingSchema } from "../lib/schemas/booking.schema";
 import { BookingSchema } from "../lib/schemas/booking.schema";
 import { generateWhatsAppLink } from "../lib/utils/whatsapp";
 import TermAndCondition from "./TermAndCondition";
+import { useCreateBooking } from "@/app/services/booking/useBooking";
 
 const WhatsAppIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
@@ -40,6 +41,8 @@ export default function BookingForm({ service }: { service: string }) {
     resolver: zodResolver(bookingSchema),
   });
 
+  const createBooking = useCreateBooking();
+
   const [isTermsOpen, setIsTermsOpen] = useState(false);
 
   useEffect(() => {
@@ -50,8 +53,19 @@ export default function BookingForm({ service }: { service: string }) {
   }, []);
 
   const onSubmit = (data: BookingSchema) => {
-    const url = generateWhatsAppLink(data, service);
-    window.open(url, "_blank");
+    createBooking.mutate(
+      { ...data, service },
+      {
+        onSuccess: () => {
+          const url = generateWhatsAppLink(data, service);
+          window.open(url, "_blank");
+        },
+
+        onError: (error) => {
+          console.error(error);
+        },
+      },
+    );
   };
 
   return (
